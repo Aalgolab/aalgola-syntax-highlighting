@@ -1,6 +1,6 @@
 
 <h1>
-  <img src="./aalgola-logo.svg" alt="Aalgola"/><br>
+  <img src="./aalgola_logo.svg" alt="Aalgola"/><br>
   Syntax Highlighting
 </h1>
 
