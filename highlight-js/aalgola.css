@@ -1,0 +1,72 @@
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'AalfonsNumeric';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Numeric.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'Aalfons';
+	padding: 2rem;
+	background: #F5F5F5;
+}
+
+pre {
+	padding: 1em;
+	background: white;
+	border: 1px solid #ccc;
+	overflow-x: auto;
+}
+
+pre, code {
+	font-family: 'Aalfons';
+}
+
+.hljs-doc-comment		{ color: #999999; }
+.hljs-comment			{ color: #999999; }
+.hljs-ignore				{ color: #AAAAAA; text-decoration:  line-through; font-size: small; }
+.hljs-keyword			{ color: #000000; font-weight: bold; }
+.hljs-keyvalue			{ color: #666666; font-weight: bold; font-style: italic; }
+.hljs-string				{ color: #006699; }
+.hljs-memory			{ color: #006699; font-family: AalfonsNumeric; }
+.hljs-number			{ color: #006699; font-family: AalfonsNumeric, Alfons; }
+.hljs-units				{ color: #006699;  }
+.hljs-routine			{ color: #000000; }
+.hljs-variable			{ color: #000000; font-style: italic; }
+.hljs-const				{ color: #000000; font-size: smaller; }
+.hljs-annotation		{ color: #999999; font-size: smaller; }
+.hljs-named			{ color: #999999; font-size: smaller; }
+.hljs-name-label		{ color: #999999; font-size: smaller; }
+.hljs-literal				{ color: #006699; }
+.hljs-label				{ color: #006699; font-size: smaller; }
+.hljs-label-symbol		{ color: #006699; }
+.hljs-superscript		{ color: #006699;  }

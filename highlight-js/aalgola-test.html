@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highlight.js – Aalgola Test</title>
+
+	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/styles/default.min.css" />
+	<link rel="stylesheet" href="./aalgola.css">
+
+</head>
+<body>
+
+<pre><code class="aalgola">
+
+namespace //example.aalgola.org/syntax/highlight/
+
+import //aalgola.org/core/character/Ascii
+
+⟦public⟧
+⟦order(RANDOM, seed: (4B2A 3346)₁₆)⟧
+test SyntaxHighlightTest ⁌
+	Demonstrates how Aalgola works with syntax highlighting.
+⁍ is
+
+	test “time and date literals” is
+		time :← 12:34
+		instant :← 12:34:56.123456789
+		assert time = 12:34:00
+		assert instant > time
+
+		date :← 2025-04-24
+		time_and_date :← 2025-04-24T12:34
+
+		day_in_year :← 2025-001
+		assert day_in_year = 2025-01-01
+
+		day_in_week :← 2025-W01-6
+		assert day_in_week = 2025-01-04
+	end
+
+	test “rational number literals” is
+		fraction_set :← {½, ⅓, ⅔, ¼, ¾, ⅕, ⅖, ⅗, ⅘, ⅙, ⅚, ⅛, ⅜, ⅝, ⅞}
+		assert ¹⁄₂ ∈ fraction_set
+		assert ⁻¹²³⁄₄₅₆ = ¹²³⁄₋₄₅₆
+		assert 2¹⁄₂ = ⁵⁄₂
+		assert 0.022̅7̅ = ¹⁄₄₄
+		assert −¹⁄₅₄ = −0.01̅8̅5̅
+	end
+
+	test “decimal number literals” is
+		above :← 12.34̇
+		below :← 12.34̣
+		assert below &lt; 12.34 &lt; above
+
+		c₀ := 299 792 45𝟖 􊀦/􊀬
+		positive :← +123.456
+		negative :← −123.456
+
+		N􊈁 := 6.022 140 7𝟔 × 10²³ 􊀦􊀨􊀥⁻¹
+		μ₀ := 1.256 637 061 27 (20) × 10⁻⁶ 􊀍⋅􊀀⁻²
+
+		‌const₁ :← 123.456𝟕 × 10²³
+		‌const₂ :← 456𝟕 × 10²³
+		‌const₃ :← 456 × 10²³
+		‌const₄ :← 123.456 × 10⁻²³
+
+		􊄹 := 3.14159 26535 89793 23846 26433...
+		􊄹′ :← 355 / 113
+		assert ∣􊄹 − 􊄹′∣ ≤ 10⁻⁷
+	end
+
+	test “integer number literals” is
+		large :← +10¹⁰⁰
+		assert large = 2 × 10⁴⁹ ⋅  5 × 10⁵⁰
+	end
+
+	test “𝑏-adic number literals” is
+		μ₀ := (01…01)₂
+		t₁ :← Tetra(μ₀)
+		assert t₁ = (01010101 01010101 01010101 01010101)₂
+		assert t₁ = (5…5)₁₆
+
+		all_bits :← (…1)₂
+		t₂ :← Tetra(all_bits)
+		assert t₂ = −1
+
+		mask₁ :← (CAFE BABE)₁₆
+		mask₂ :← (1234 5678)₁₆
+		assert mask₁ ⊙ mask₂ = (DAFE FEFE)₁₆
+	end
+
+	test “degree literals” is
+		α₁ :← 12° 34′ 56″
+		α₂ :← 12° 34.56′
+		assert α₁ > α₂
+	end
+
+	test “position literals” is
+		position :← 12° 34′ 56.789″ N 012° 34′ 56.789″ W
+	end
+
+	test “memory literals” is
+		big_endian :← ⦍
+			00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+			A0 A1 A2 A3 A4 A5 A6 A7 A8 A9 AA AB AC AD AE AF
+			F0 F1 F2 F3 F4 F5 F6 F7 F8 F9 FA FB FC FD FE FF
+		⦎₁₆
+		assert big_endian[3] = (03)₁₆
+
+		little_endian :← ⦏A0A1 A2A3 A4A5 A6A7 A8A9 AAAB ACAD AEAF⦐₁₆
+		assert little_endian[2] = (AAAB)₁₆
+	end
+
+	test “units” is
+		x :← 3 + 4 􊀢
+		y :← −3 + 7 􊀢
+		assert x + y = 11 􊀢
+
+		m :← 10 000
+		length₁ :← 10 􊀤􊀦
+		llength₂ :← m ⋅ 􊀦
+		assert l₁ = l₂
+
+		pressure :← 1.2 􊀤􊀏􊀚
+		assert pressure = 1200.0 􊀏􊀚
+	end
+
+	test “string literals” is
+		hello :← “"Hello"” ⋅ NL
+		assert hello = "\"hello\"\n"
+
+		text :← «
+			A string
+			spanning more than
+			two lines.
+		»
+		assert text = """
+			A string \nspanning more than
+			two lines.
+		"""
+	end
+
+	test “character literals” is
+		c :← ‘A’
+		assert c = U+0041
+		null :← '\0'
+		assert null = Ascii.NUL
+	end
+
+	test “version literal” is
+		version₁ :← 1.2.99-beta
+		version₂ :← 1.2.99
+		version₃ :← 1.2.100
+		assert version₁ &lt; version₂ &lt; version₃
+	end
+
+	test “special variables” is
+		𝟕 := “seven”
+		assert 𝟕𝟕𝟕 = “sevensevenseven”
+	end
+
+	test “file path literals” is
+		home_directory :← ∼/
+		config_directory :← ./config/
+		assert home_directory / config_directory = ∼/config/
+
+		app_support :← ./app//support/
+		relative_path :← ../‥/‥/x.txt
+		assert app_support / relative_path = ./app/x.txt
+	end
+
+	test “symbols” is
+		enum Suit ≡ {♣, ♠, ♡, ♢}
+		assert ♡.ord() = 3
+	end
+
+	test “constant names” is
+		enum TestName ≡ {SIMPLE, UNDER_LINE, 3D, 3_D}
+		t :← TestName.arb()
+		flag :← TRUE
+		assert flag ⩑ t ∈ TestName
+	end
+
+	test “label symbols” is
+		i :← 10
+		n :← 0
+	①:
+		n ← n + 1
+		i ← i − 1
+		unless i > 0 then
+			goto ①↑
+		end
+		assert i = 0
+		assert n = 10
+	end
+
+	test “labels” is
+		sum :← 0
+		n :← 100
+		NAMED_LOOP: for x ∈ ⟨1, …, n⟩ do
+			sum ← sum + x²
+			if ⟦improbable⟧ sum ≥ 100 then
+				break NAMED_LOOP
+			end
+		end
+		assert sum ≥ 100
+	end
+
+	test “IP address literals” is
+		ip4_address :← [127.0.0.1]
+		assert ip4_address = [::ffff:7f00:1]
+		assert [::ffff:7f00:1] = [0:0:0:0:0:ffff:7f00:0001]
+		assert [::ffff:7f00:1] = [0000:0000:0000:0000:0000:ffff:7f00:0001]
+	end
+
+	⟦cache⟧
+	function fib(n : ℕ₃₂) → ℕ is
+	◼ 0, 1:
+		return 1
+	◼ :
+		return fib(n − 1) + fib(n − 2)
+	end
+
+	⟦private⟧
+	object Person(name : 𝕊, first_name : 𝕊)
+
+	⟦private⟧
+	⟦negates(notEqual)⟧
+	function equal(p₁ : Person, p₂ : Person) → 𝔹 is
+		return p₁.name() = p₂.name() ⩑ p₁.firstName() = p₂.firstName()
+	end
+
+	⟦private⟧
+	⟦negates(equal)⟧
+	function notEqual(p₁ : Person, p₂ : Person) → 𝔹 is
+		return ¬equal(p₁, p₂)
+	end
+
+	⟦private⟧
+	function toString(p : Person, “s” : StringBuilder􊋑 = NIL, “needs_space” : 𝔹 = TRUE) → 𝕊 is
+		if s = NIL then
+			s ← StringBuilder()
+		end
+		s.append(p.name())
+		s.append(“,”)
+		if needs_space then
+			s.append(“ ”)
+		end
+		s.append(p.firstName())
+		return s.done()
+	end
+
+	⟦private⟧
+	function sum(⟦varargs⟧ s : ℕ₃􊍋₂ as Array⟦ℕ₃₂⟧) → ℕ₃₂ requires {∣s∣ ≠ 0} is
+		THRESHOLD := 10
+		n :← ∣s∣
+		if n ≤ THRESHOLD then
+			return ∑s
+		end
+		k :← n ÷ 2
+		return ∑[1 ≤ i ≤ k] s[i] + spawn ∑[k &lt; i ≤ n] s[i]
+	end
+
+	test “function call” is
+		assert sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) = 55
+		assert sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) = 120
+		p :← Person(“Clouseau”, “Jacques”)
+		assert toString(p) =  “Clouseau, Jacques”
+		assert toString(p, needs_space: FALSE) =  “Clouseau,Jacques”
+	end
+
+	⁌‌[[[
+		test “failing test” ⁌
+			This test will fail.
+		⁍ is
+			assert FALSE
+		end
+	]]]‌⁍
+
+end test
+</code></pre>
+
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js"></script>
+<script src="./aalgola.js"></script>
+<script>
+	hljs.registerLanguage('aalgola', window.hljsDefineAalgola);
+	hljs.highlightAll();
+</script>
+
+</body>
+</html>

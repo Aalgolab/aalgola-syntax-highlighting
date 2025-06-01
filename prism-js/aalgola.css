@@ -1,0 +1,72 @@
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Aalfons';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'AalfonsNumeric';
+	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Numeric.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'Aalfons';
+	padding: 2rem;
+	background: #F5F5F5;
+}
+
+pre {
+	padding: 1em;
+	background: white;
+	border: 1px solid #ccc;
+	overflow-x: auto;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+	font-family: 'Aalfons', serif;
+	font-size: 1rem;
+}
+
+.token.doc-comment	{ color: #999999; }
+.token.comment		{ color: #999999; }
+.token.ignore			{ color: #AAAAAA; text-decoration:  line-through; font-size: small; }
+.token.keyword		{ color: #000000; font-weight: bold; }
+.token.keyvalue		{ color: #666666; font-weight: bold; font-style: italic; }
+.token.string			{ color: #006699; }
+.token.memory			{ color: #006699; font-family: 'AalfonsNumeric'; }
+.token.number			{ color: #006699; font-family: 'AalfonsNumeric'; }
+.token.units			{ color: #006699;  }
+.token.type				{ color: #000000; }
+.token.variable			{ color: #000000; font-style: italic; }
+.token.const			{ color: #000000; font-size: smaller; }
+.token.annotation		{ color: #999999; font-size: smaller; }
+.token.name-label		{ color: #999999; font-size: smaller; }
+.token.literal			{ color: #006699; }
+.token.label			{ color: #006699; font-size: smaller; }
+.token.label-symbol	{ color: #006699; }
+.token.superscript		{ color: #006699;  }
