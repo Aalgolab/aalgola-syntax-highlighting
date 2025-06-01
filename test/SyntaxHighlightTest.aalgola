@@ -106,8 +106,8 @@ test SyntaxHighlightTest ⁌
 
 		m :← 10 000
 		length₁ :← 10 􊀤􊀦
-		llength₂ :← m ⋅ 􊀦
-		assert l₁ = l₂
+		length₂ :← m ⋅ 􊀦
+		assert length₁ = length₂
 
 		pressure :← 1.2 􊀤􊀏􊀚
 		assert pressure = 1200.0 􊀏􊀚
