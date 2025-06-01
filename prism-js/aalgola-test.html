@@ -31,6 +31,7 @@ test SyntaxHighlightTest ⁌
 	Demonstrates how Aalgola works with syntax highlighting.
 ⁍ is
 
+	⟦public⟧
 	test “time and date literals” is
 		time :← 12:34
 		instant :← 12:34:56.123456789
@@ -128,7 +129,7 @@ test SyntaxHighlightTest ⁌
 		m :← 10 000
 		length₁ :← 10 􊀤􊀦
 		length₂ :← m ⋅ 􊀦
-		assert l₁ = l₂
+		assert length₁ = length₂
 
 		pressure :← 1.2 􊀤􊀏􊀚
 		assert pressure = 1200.0 􊀏􊀚
@@ -245,7 +246,6 @@ test SyntaxHighlightTest ⁌
 		return ¬equal(p₁, p₂)
 	end
 
-	⟦private⟧
 	function toString(p : Person, “s” : StringBuilder􊋑 = NIL, “needs_space” : 𝔹 = TRUE) → 𝕊 is
 		if s = NIL then
 			s ← StringBuilder()
