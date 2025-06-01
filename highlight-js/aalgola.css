@@ -1,35 +1,35 @@
 
 @font-face {
 	font-family: 'Aalfons';
-	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Regular.ttf') format('truetype');
+	src: url('https://static.aalgola.org/style/aalfons/Aalfons-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Aalfons';
-	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Bold.ttf') format('truetype');
+	src: url('https://static.aalgola.org/style/aalfons/Aalfons-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Aalfons';
-	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Italic.ttf') format('truetype');
+	src: url('https://static.aalgola.org/style/aalfons/Aalfons-Italic.ttf') format('truetype');
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Aalfons';
-	src: url('http://static.aalgola.org/style/aalfons/Aalfons-BoldItalic.ttf') format('truetype');
+	src: url('https://static.aalgola.org/style/aalfons/Aalfons-BoldItalic.ttf') format('truetype');
 	font-weight: bold;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'AalfonsNumeric';
-	src: url('http://static.aalgola.org/style/aalfons/Aalfons-Numeric.ttf') format('truetype');
+	src: url('https://static.aalgola.org/style/aalfons/Aalfons-Numeric.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
